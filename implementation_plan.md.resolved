@@ -1,0 +1,55 @@
+# Spotify Clone Web Application
+
+Build a pixel-perfect Spotify clone using vanilla HTML, CSS, and JavaScript that supports song search and playback via the Deezer API (free, no auth required, provides 30-second previews).
+
+## Proposed Changes
+
+### Project Setup
+
+#### [NEW] [index.html](file:///c:/Users/LENOVO/Desktop/f1_strategy_project/spotify-clone/index.html)
+Single-page HTML file with Spotify's layout structure:
+- Sidebar (navigation, playlist list)
+- Main content area (home view, search results)
+- Bottom player bar (album art, controls, progress, volume)
+- Uses Google Fonts (Circular/Inter), Font Awesome icons
+
+---
+
+### Styling
+
+#### [NEW] [style.css](file:///c:/Users/LENOVO/Desktop/f1_strategy_project/spotify-clone/style.css)
+Complete CSS matching Spotify's dark theme:
+- Colors: `#121212` background, `#1DB954` green accent, `#181818` cards, `#b3b3b3` muted text
+- Responsive grid layout (sidebar + main + player bar)
+- Card components for albums/playlists
+- Search bar styling
+- Player bar with progress slider
+- Hover effects, smooth transitions, glassmorphism on cards
+- Custom scrollbar styling
+- Animations for loading states
+
+---
+
+### Application Logic
+
+#### [NEW] [app.js](file:///c:/Users/LENOVO/Desktop/f1_strategy_project/spotify-clone/app.js)
+Core application JavaScript:
+- **Deezer API Integration**: Search songs, fetch charts/trending, get artist info via `https://corsproxy.io/?https://api.deezer.com/`
+- **Search**: Real-time search with debounce, display track results with album art
+- **Music Player**: HTML5 Audio API playback, play/pause, next/previous, progress bar seek, volume control
+- **Queue Management**: Play queue, skip forward/back
+- **Home Page**: Display trending/chart tracks on load
+- **UI State**: View switching (home/search), active track highlighting
+- **Playlist Feature**: Create and manage local playlists (localStorage)
+
+---
+
+## Verification Plan
+
+### Browser Testing
+1. Open `spotify-clone/index.html` in a browser via a local server
+2. Verify the dark theme UI matches Spotify's look
+3. Test search: type an artist/song name → results appear with album art
+4. Test playback: click a song → audio plays, player bar updates with track info
+5. Test controls: play/pause, next/prev, seek via progress bar, volume slider
+6. Test responsiveness: resize window → layout adapts
